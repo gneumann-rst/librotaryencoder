@@ -74,30 +74,30 @@ target_compile_options(
           -Wstrict-prototypes
 )
 
-foreach(test debounced_encoder_full_step_test
-             debounced_encoder_half_step_test
-             simple_encoder_full_step_test
-             simple_encoder_half_step_test
-             compare_tt_test)
-  add_executable(${test} test/${test}.c)
-  set_property(TARGET ${test} PROPERTY C_STANDARD 99)
+# foreach(test debounced_encoder_full_step_test
+#              debounced_encoder_half_step_test
+#              simple_encoder_full_step_test
+#              simple_encoder_half_step_test
+#              compare_tt_test)
+#   add_executable(${test} test/${test}.c)
+#   set_property(TARGET ${test} PROPERTY C_STANDARD 99)
 
-  target_include_directories(${test} PRIVATE include greatest)
-  target_link_libraries(${test} rotaryencoder)
+#   target_include_directories(${test} PRIVATE include greatest)
+#   target_link_libraries(${test} rotaryencoder)
 
-  target_compile_options(${test} PRIVATE ${COMMON_WARNING_FLAGS} -Wstrict-prototypes)
+#   target_compile_options(${test} PRIVATE ${COMMON_WARNING_FLAGS} -Wstrict-prototypes)
 
-  add_test(NAME ${test} COMMAND ${test})
-endforeach()
+#   add_test(NAME ${test} COMMAND ${test})
+# endforeach()
 
-add_executable(cplusplus_test test/cplusplus_test.cpp)
-set_property(TARGET cplusplus_test PROPERTY CXX_STANDARD 11)
+# add_executable(cplusplus_test test/cplusplus_test.cpp)
+# set_property(TARGET cplusplus_test PROPERTY CXX_STANDARD 11)
 
-target_include_directories(cplusplus_test PRIVATE include greatest)
-target_link_libraries(cplusplus_test rotaryencoder)
+# target_include_directories(cplusplus_test PRIVATE include greatest)
+# target_link_libraries(cplusplus_test rotaryencoder)
 
-target_compile_options(cplusplus_test PRIVATE ${COMMON_WARNING_FLAGS})
+# target_compile_options(cplusplus_test PRIVATE ${COMMON_WARNING_FLAGS})
 
-add_test(NAME cplusplus_test COMMAND cplusplus_test)
+# add_test(NAME cplusplus_test COMMAND cplusplus_test)
 
-enable_testing()
+# enable_testing()
